@@ -13,7 +13,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document, {
     customSiteTitle: 'Swagger UI',
-    // customfavIcon: 'https://github.com/prabincankod.png',
+    customfavIcon: 'https://source.unsplash.com/user/c_v_r/1900x800 ',
     customJs: [
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.js',
