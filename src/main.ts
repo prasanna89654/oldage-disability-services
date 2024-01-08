@@ -13,6 +13,10 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document, {
+    swaggerOptions: {
+      tagsSorter: 'alpha',
+      operationsSorter: 'alpha',
+    },
     customSiteTitle: 'Swagger UI',
     customfavIcon: 'https://source.unsplash.com/user/c_v_r/1900x800 ',
     customJs: [

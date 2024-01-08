@@ -6,9 +6,10 @@ import { StateModule } from './state/state.module';
 import { DistrictModule } from './district/district.module';
 import { RoleModule } from './role/role.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [LocalModule, StateModule, DistrictModule, RoleModule, PrismaModule],
+  imports: [LocalModule, StateModule, DistrictModule, RoleModule, PrismaModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
