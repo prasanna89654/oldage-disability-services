@@ -8,9 +8,11 @@ import {
   Delete,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { LoginDto } from './dto/login.dto';
+import { LoginResponse } from './dto/login.response';
+import { RegisterDto } from './dto/register.dto';
+import { User } from '@prisma/client';
 
 @ApiTags('Auth')
 @Controller('Auth')
@@ -18,12 +20,12 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('Login')
-  Update(@Body() createAuthDto: CreateAuthDto) {
-    return this.authService.create(createAuthDto);
+  login(@Body() loginDto: LoginDto): Promise<LoginResponse> {
+    return this.authService.login(loginDto);
   }
 
   @Post('Register')
-  create(@Body() createAuthDto: CreateAuthDto) {
-    return this.authService.create(createAuthDto);
+  register(@Body() registerDto: RegisterDto): Promise<User> {
+    return this.authService.register(registerDto);
   }
 }
